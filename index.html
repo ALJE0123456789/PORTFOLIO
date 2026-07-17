@@ -841,6 +841,84 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* =============================================
+   EDUCATION SECTION
+============================================= */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.edu-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(4px);
+}
+
+.edu-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 212, 255, 0.15);
+    background: rgba(0, 212, 255, 0.03);
+}
+
+.edu-card .institution {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.edu-card .period {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.edu-card .grade {
+    font-size: 15px;
+    color: #00d4ff;
+    font-weight: 500;
+}
+
+/* ----- GLOWING GREEN DOT ANIMATION ----- */
+.status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #00ff88;
+    border-radius: 50%;
+    margin-right: 6px;
+    box-shadow: 0 0 15px #00ff88;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.edu-card .status-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 2px 14px 2px 8px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    font-size: 12px;
+    font-weight: 500;
+    color: #00ff88;
+}
     </style>
 </head>
 <body>
@@ -864,6 +942,7 @@
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1005,15 +1084,53 @@
                 <i class="fas fa-cloud" style="color:#00d4ff;"></i>
                 <span class="skill-name">Vercel</span>
             </div>
-             <div class="skill-card" data-aos="flip-up" data-aos-delay="400">
+             <div class="skill-card" data-aos="flip-up" data-aos-delay="450">
                 <i class="fas fa-code" style="color:#00d4ff;"></i>
                 <span class="skill-name">C++</span>
             </div>
-              <div class="skill-card" data-aos="flip-up" data-aos-delay="400">
+              <div class="skill-card" data-aos="flip-up" data-aos-delay="500">
                 <i class="fab fa-github" style="color:#00d4ff;"></i>
                 <span class="skill-name">Github</span>
             </div>
             <!-- Add more skills by copying the div above -->
+        </div>
+    </section>
+        <!-- =============================================
+    EDUCATION SECTION
+    ============================================= -->
+    <section class="section" id="education">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Academics</span>
+            <h2>My <span class="highlight">Education</span></h2>
+            <p>My academic journey and achievements</p>
+        </div>
+
+        <div class="education-grid">
+            <!-- College -->
+            <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="institution">College of Engineering Cherthala</div>
+                <div class="period">
+                    <span>2026 – 2030</span>
+                    <span class="status-badge">
+                        <span class="status-dot"></span> Ongoing
+                    </span>
+                </div>
+                <div class="grade">BTech Computer Engineering</div>
+            </div>
+
+            <!-- Higher Secondary -->
+            <div class="edu-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="institution">Higher Secondary School</div>
+                <div class="period">2024 – 2026</div>
+                <div class="grade">🏆 97%</div>
+            </div>
+
+            <!-- High School -->
+            <div class="edu-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="institution">High School</div>
+                <div class="period">2024</div>
+                <div class="grade">⭐ Full A+ (100%)</div>
+            </div>
         </div>
     </section>
 
